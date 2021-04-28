@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>HARD COPY</title>
+<<<<<<< HEAD
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -15,6 +16,13 @@
 
 <style>
 
+=======
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
+    <style>
+
+>>>>>>> 6f6cc3e3c2dbf0b1e452598fa1094e117b83420d
 body {
 
     height:100%;
@@ -22,13 +30,15 @@ body {
     }
 
 
-    
+
 #text {
 	display: inline-block;
 	vertical-align: middle;
 	color: black;
 	letter-spacing: 2px;
 	font-family: Gotham;
+	font-size: 25px;
+
 
 }
 
@@ -49,6 +59,37 @@ body {
 		background-color: black;
 	}
 }
+<<<<<<< HEAD
+=======
+/*topToBottom Animation*/
+@-moz-keyframes topToBottom{
+	0% { opacity: 0; }
+	5% { opacity: 0; -moz-transform: translateY(-50px); }
+	10% { opacity: 1; -moz-transform: translateY(0px); }
+	25% { opacity: 1; -moz-transform: translateY(0px); }
+	30% { opacity: 0; -moz-transform: translateY(50px); }
+	80% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-webkit-keyframes topToBottom{
+	0% { opacity: 0; }
+	5% { opacity: 0; -webkit-transform: translateY(-50px); }
+	10% { opacity: 1; -webkit-transform: translateY(0px); }
+	25% { opacity: 1; -webkit-transform: translateY(0px); }
+	30% { opacity: 0; -webkit-transform: translateY(50px); }
+	80% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-ms-keyframes topToBottom{
+	0% { opacity: 0; }
+	5% { opacity: 0; -ms-transform: translateY(-50px); }
+	10% { opacity: 1; -ms-transform: translateY(0px); }
+	25% { opacity: 1; -ms-transform: translateY(0px); }
+	30% { opacity: 0; -ms-transform: translateY(50px); }
+	80% { opacity: 0; }
+	100% { opacity: 0; }
+}
+>>>>>>> 6f6cc3e3c2dbf0b1e452598fa1094e117b83420d
 
 #container {
 position: absolute;
@@ -56,9 +97,18 @@ position: absolute;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+<<<<<<< HEAD
   padding: 10px;
   top-padding: 30px;
   text-align: center;
+=======
+  border: 3px solid green;
+  padding: 10px;
+  top-padding: 30px;
+  text-align: center;
+
+}
+>>>>>>> 6f6cc3e3c2dbf0b1e452598fa1094e117b83420d
 
 }
     </style>
@@ -79,7 +129,7 @@ position: absolute;
 
 // List of sentences
 var _CONTENT = [
-	"does it matter if you can't get the <strong>HARD COPY\u2122</strong>",
+	"does it matter if you can't get the<br> <strong>HARD COPY\u2122</strong>",
 	"You should call them back",
 	"We dont even sleep when we're dead",
 
