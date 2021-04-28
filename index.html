@@ -14,7 +14,7 @@
 	text-align: center;
     vertical-align: middle;
     position: absolute;
-  top: 50%;
+  top: 50%
   left: 50%;
 
   margin: -70px 0 0 -170px;
@@ -55,90 +55,29 @@ body {
 		background-color: black;
 	}
 }
-/*topToBottom Animation*/
-@-moz-keyframes topToBottom{
-	0% { opacity: 0; }
-	5% { opacity: 0; -moz-transform: translateY(-50px); }
-	10% { opacity: 1; -moz-transform: translateY(0px); }
-	25% { opacity: 1; -moz-transform: translateY(0px); }
-	30% { opacity: 0; -moz-transform: translateY(50px); }
-	80% { opacity: 0; }
-	100% { opacity: 0; }
-}
-@-webkit-keyframes topToBottom{
-	0% { opacity: 0; }
-	5% { opacity: 0; -webkit-transform: translateY(-50px); }
-	10% { opacity: 1; -webkit-transform: translateY(0px); }
-	25% { opacity: 1; -webkit-transform: translateY(0px); }
-	30% { opacity: 0; -webkit-transform: translateY(50px); }
-	80% { opacity: 0; }
-	100% { opacity: 0; }
-}
-@-ms-keyframes topToBottom{
-	0% { opacity: 0; }
-	5% { opacity: 0; -ms-transform: translateY(-50px); }
-	10% { opacity: 1; -ms-transform: translateY(0px); }
-	25% { opacity: 1; -ms-transform: translateY(0px); }
-	30% { opacity: 0; -ms-transform: translateY(50px); }
-	80% { opacity: 0; }
-	100% { opacity: 0; }
-}
-p
-        {
-            text-align: center;
-            font-size: 30px;
-            color: black;
-            font-family: Impact, monospace;
-            font-size: 4vw;
 
-
-        }
-
-        .timer
-        {
-            height: 100%;
-            width: 100%;
-
-        }
-        #loader {
-
-  -webkit-animation: spin 8s linear infinite;
-  animation: spin 8s linear infinite;
-}
-
-
-        .animate-bottom {
-  position: relative;
-  -webkit-animation-name: animatebottom;
-  -webkit-animation-duration: 1s;
-  animation-name: animatebottom;
-  animation-duration: 1s
-}
-
-@-webkit-keyframes animatebottom {
-  from { bottom:-100px; opacity:0 }
-  to { bottom:0px; opacity:1 }
-}
-
-@keyframes animatebottom {
-  from{ bottom:-100px; opacity:0 }
-  to{ bottom:0; opacity:1 }
-}
-
-#myDiv {
-  display: none;
+#container {
+position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border: 3px solid green;
+  padding: 10px;
+  top-padding: 30px;
   text-align: center;
-}
 
+}
     </style>
 </head>
 <body onload="myFunction()" style="margin:0;">
 
-<div id="back" >
+
     <div id="container">
+
         <div id="text"></div><div id="cursor"></div>
     </div>
-</div>
+
 
 
 </body>
