@@ -3,24 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>HARD COPY</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
     <style>
-#container {
-	text-align: center;
-    vertical-align: middle;
-    position: absolute;
-  top: 50%;
-  left: 50%;
 
-  margin: -70px 0 0 -170px;
-
-
-    }
 body {
 
     height:100%;
@@ -28,13 +15,15 @@ body {
     }
 
 
-    
+
 #text {
 	display: inline-block;
 	vertical-align: middle;
 	color: black;
 	letter-spacing: 2px;
 	font-family: Gotham;
+	font-size: 25px;
+
 
 }
 
@@ -83,62 +72,30 @@ body {
 	80% { opacity: 0; }
 	100% { opacity: 0; }
 }
-p
-        {
-            text-align: center;
-            font-size: 30px;
-            color: black;
-            font-family: Impact, monospace;
-            font-size: 4vw;
 
-
-        }
-
-        .timer
-        {
-            height: 100%;
-            width: 100%;
-
-        }
-        #loader {
-
-  -webkit-animation: spin 8s linear infinite;
-  animation: spin 8s linear infinite;
-}
-
-
-        .animate-bottom {
-  position: relative;
-  -webkit-animation-name: animatebottom;
-  -webkit-animation-duration: 1s;
-  animation-name: animatebottom;
-  animation-duration: 1s
-}
-
-@-webkit-keyframes animatebottom {
-  from { bottom:-100px; opacity:0 }
-  to { bottom:0px; opacity:1 }
-}
-
-@keyframes animatebottom {
-  from{ bottom:-100px; opacity:0 }
-  to{ bottom:0; opacity:1 }
-}
-
-#myDiv {
-  display: none;
+#container {
+position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border: 3px solid green;
+  padding: 10px;
+  top-padding: 30px;
   text-align: center;
+
 }
 
     </style>
 </head>
 <body onload="myFunction()" style="margin:0;">
 
-<div id="back" >
+
     <div id="container">
+
         <div id="text"></div><div id="cursor"></div>
     </div>
-</div>
+
 
 
 </body>
@@ -147,7 +104,7 @@ p
 
 // List of sentences
 var _CONTENT = [
-	"does it matter if you can't get the <strong>HARD COPY\u2122</strong>",
+	"does it matter if you can't get the<br> <strong>HARD COPY\u2122</strong>",
 	"You should call them back",
 	"We dont even sleep when we're dead",
 
