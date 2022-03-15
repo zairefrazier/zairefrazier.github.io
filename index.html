@@ -14,7 +14,7 @@
         day = hour * 24;
 
   
-  const countDown = new Date("Mar 19, 2022 00:00:00").getTime(),
+  const countDown = new Date("Apr 19, 2022 00:00:00").getTime(),
       x = setInterval(function() {    
 
         const now = new Date().getTime(),
@@ -46,6 +46,7 @@ $(function() {
     $target = $('#target');
     loadContent();
     window.setInterval(loadContent, 1000);
+    $target.delay(1000).hide(0);
 });
 
 function loadContent() {
@@ -70,7 +71,14 @@ $("#container").hide();
 // Show the div in 5s
 $("#container").delay(5050).fadeIn(100);
 
+
 });
+    </script>
+    <script>
+      setTimeout(function() {
+    $('#target').delay(1000).hide(0);
+      });
+
     </script>
     <style>
     html, body {
@@ -108,6 +116,7 @@ model-viewer {
             left: 0;
             width: 300px;
             height: 300px;
+            z-index: 10;
         }
 body {
     background-color: black;
@@ -122,6 +131,7 @@ body {
             width: 300px;
             height: 300px;
             float: left;
+            z-index: 10;
     
 }
 #container {
@@ -130,6 +140,7 @@ body {
   text-align: center;
   background-color: white;
   height: 100%;
+  z-index: 10;
 }
 
 h1 {
@@ -189,7 +200,6 @@ li span {
 <body>
     <div id=target></div>
     <div id="container">
-
         <div id="countdown">
           <ul>
             <li><span id="days"></span>days</li>
@@ -198,14 +208,9 @@ li span {
             <li><span id="seconds"></span>Seconds</li>
           </ul>
         </div>
-        <div id="content" class="emoji">
-          <span>🥳</span>
-          <span>🎉</span>
-          <span>🎂</span>
-        </div>
         <div class="model">
             <model-viewer src="hard-tshirt2.gltf" poster="poster.webp" shadow-intensity="0.82" exposure="0.5" shadow-softness="1" auto-rotate camera-controls>
-                <div class="progress-bar hide" slot="progress-bar">
+                <div class="progress-bar" slot="progress-bar">
                     <div class="update-bar"></div>
                 </div>
             </model-viewer>
@@ -217,8 +222,5 @@ li span {
             </a>
           </div>
       </div>
-      
-
-    
 </body>
 </html>
