@@ -1,50 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HARD COPY</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
-    <script>
-         (function () {
-  const second = 1000,
-        minute = second * 60,
-        hour = minute * 60,
-        day = hour * 24;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HARD COPY</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    (function () {
+const second = 1000,
+   minute = second * 60,
+   hour = minute * 60,
+   day = hour * 24;
 
-  
-  const countDown = new Date("May 19, 2022 00:00:00").getTime(),
-      x = setInterval(function() {    
 
-        const now = new Date().getTime(),
-              distance = countDown - now;
+const countDown = new Date("Jun 21, 2022 00:00:00").getTime(),
+ x = setInterval(function() {    
 
-        document.getElementById("days").innerText = Math.floor(distance / (day)),
-          document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
-          document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
-          document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+   const now = new Date().getTime(),
+         distance = countDown - now;
 
-        //do something later when date is reached
-        if (distance < 0) {
-          document.getElementById("headline").innerText = "It's my birthday!";
-          document.getElementById("countdown").style.display = "none";
-          document.getElementById("content").style.display = "block";
-          clearInterval(x);
-        }
-        //seconds
-      }, 0)
-  }());
+   document.getElementById("days").innerText = Math.floor(distance / (day)),
+     document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+     document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+     document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
 
-    </script>
-    <style>
-    html, body {
-    height: 100%;
-    margin: 0;
+   //do something later when date is reached
+   if (distance < 0) {
+     document.getElementById("headline").innerText = "It's my birthday!";
+     document.getElementById("countdown").style.display = "none";
+     document.getElementById("content").style.display = "block";
+     clearInterval(x);
+   }
+   //seconds
+ }, 0)
+}());
+
+</script>
+<script>
+  var randomStuff = ["HARD COPY\u2122", "Wearable", "Interactive","Design"];
+var $target;
+var loadContentIndex = 0;
+
+$(function() {
+    $target = $('#target');
+    loadContent();
+    window.setInterval(loadContent, 2000);
+});
+
+function loadContent() {
+    $target.fadeOut(function() {
+        $target.text(randomStuff[loadContentIndex]);
+        $target.fadeIn();
+    });
+
+    loadContentIndex++;
+    console.log(randomStuff.length + ' ' + loadContentIndex);
+    if (randomStuff.length == loadContentIndex) {
+        loadContentIndex = 0;
+    }
 }
-        #target {
-            text-align: center;
-            color: white;
+</script>
+<style>
+html, body 
+{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+#target { 
   font-family: -apple-system, 
     BlinkMacSystemFont, 
     "Segoe UI", 
@@ -54,73 +78,18 @@
     Cantarell, 
     "Helvetica Neue", 
     sans-serif;
-    font-size: 60px;
-    position: absolute;
-            margin: auto;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 300px;
-    -moz-animation: cssAnimation 0s ease-in 5s forwards;
-    /* Firefox */
-    -webkit-animation: cssAnimation 0s ease-in 5s forwards;
-    /* Safari and Chrome */
-    -o-animation: cssAnimation 0s ease-in 5s forwards;
-    /* Opera */
-    animation: cssAnimation 0s ease-in 5s forwards;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-}
-@keyframes cssAnimation {
-    to {
-        width:0;
-        height:0;
-        top: 200;
-        overflow:hidden;
-    }
-}
-@-webkit-keyframes cssAnimation {
-    to {
-        width:0;
-        height:0;
-        top: 200;
-        visibility:hidden;
-    }
-}
-model-viewer {
-            
-            margin: auto;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            width: 300px;
-            height: 300px;
-            z-index: 10;
-        }
-body {
-    background-color: black;
-}
-.model {
-    position: absolute;
-            margin: auto;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            width: 300px;
-            height: 300px;
-            float: left;
-    
-}
-#container {
   color: black;
   margin: 0 auto;
   text-align: center;
   background-color: white;
-  height: 100%;
+  position: absolute;
+            margin: auto;
+            top: 400px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            font-size: 20px;
+  
 }
 #countdown {
   font-family: -apple-system, 
@@ -132,15 +101,9 @@ body {
     Cantarell, 
     "Helvetica Neue", 
     sans-serif;
+    text-align: center;
 
 }
-
-h1 {
-  font-weight: normal;
-  letter-spacing: .125rem;
-  text-transform: uppercase;
-}
-
 li {
   display: inline-block;
   font-size: 1.5em;
@@ -153,7 +116,6 @@ li span {
   display: block;
   font-size: 4.5rem;
 }
-
 @media all and (max-width: 768px) {
   h1 {
     font-size: calc(1.5rem * var(--smaller));
@@ -167,41 +129,129 @@ li span {
     font-size: calc(3.375rem * var(--smaller));
   }
 }
+
+.model {
+  position: absolute;
+            margin: auto;
+            top: 500px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 300px;
+            height: 300px;
+            float: left;
+      justify-content: center;
+}
+model-viewer {
+            
+  margin: auto;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 300px;
+            height: 300px;
+        }
 .logo {
-    display: flex;
+  display: flex;
   justify-content: center;
   position: absolute;
-  bottom: 100px;
+  bottom: -400px;
   left: 0;
   right: 0;
 
 }
+@keyframes cursor {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
 
-    </style>
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+}
+</style>
 </head>
-<body>
-    <div id="container">
-        <div id="countdown">
-          <ul>
-            <li><span id="days"></span>days</li>
-            <li><span id="hours"></span>Hours</li>
-            <li><span id="minutes"></span>Minutes</li>
-            <li><span id="seconds"></span>Seconds</li>
-          </ul>
-        </div>
-        <div class="model">
-            <model-viewer src="./hard-tshirt2.gltf" poster="poster.webp" shadow-intensity="0.82" exposure="0.5" shadow-softness="1" auto-rotate camera-controls>
-                <div class="progress-bar" slot="progress-bar">
-                    <div class="update-bar"></div>
-                </div>
-            </model-viewer>
-            
-        </div>
-        <div class="logo">
-            <a href="https://www.instagram.com/hard._.copy/">
-              <img src="iglogo.png" width="30px" height="30px">
-            </a>
-          </div>
+<body onload="myFunction()">
+  <div id="loader">
+  <div id=target> </div>
+  </div>
+
+  <div style="display:none;" id="myDiv" class="animate-bottom">
+
+  <div id="countdown">
+    <ul>
+      <li><span id="days"></span>days</li>
+      <li><span id="hours"></span>Hours</li>
+      <li><span id="minutes"></span>Minutes</li>
+      <li><span id="seconds"></span>Seconds</li>
+    </ul>
+  </div>
+<div class="model">
+  <div style="float: left;">
+    <model-viewer bounds="tight" enable-pan src="./hardphonetshirt2.gltf" shadow-intensity="2.82" exposure="0.8" shadow-softness="1" auto-rotate camera-controls>
+
+      <div class="progress-bar" slot="progress-bar">
+          <div class="update-bar"></div>
       </div>
+  </model-viewer>
+  <div style="float: left;">
+    <model-viewer bounds="tight" enable-pan src="./hardbirdstshirt2.gltf" shadow-intensity="2.82" exposure="0.8" shadow-softness="1" auto-rotate camera-controls>
+
+      <div class="progress-bar" slot="progress-bar">
+          <div class="update-bar"></div>
+      </div>
+    </model-viewer>
+  </div>
+  </div>
+  <div class="logo">
+    <a href="https://www.instagram.com/hard._.copy/">
+      <img src="iglogo.png" width="30px" height="30px">
+    </a>
+  </div>
+</div>
+
+</div>
+<script>
+  var myVar;
+  
+  function myFunction() {
+    myVar = setTimeout(showPage, 8000);
+  }
+  
+  function showPage() {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("myDiv").style.display = "block";
+  }
+  </script>
 </body>
 </html>
