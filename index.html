@@ -137,8 +137,8 @@ li span {
             right: 0;
             bottom: 0;
             left: 0;
-            width: 300px;
-            height: 300px;
+            width: 200px;
+            height: 200px;
             float: left;
       justify-content: center;
 }
@@ -149,14 +149,14 @@ model-viewer {
             right: 0;
             bottom: 0;
             left: 0;
-            width: 300px;
-            height: 300px;
+            width: 200px;
+            height: 200px;
         }
 .logo {
   display: flex;
   justify-content: center;
   position: absolute;
-  bottom: -200px;
+  bottom: -300px;
   left: 0;
   right: 0;
 
@@ -199,6 +199,13 @@ model-viewer {
 #myDiv {
   display: none;
 }
+
+
+
+
+
+
+
 </style>
 </head>
 <body onload="myFunction()">
@@ -218,13 +225,12 @@ model-viewer {
   </div>
 <div class="model">
   <div style="float: left;">
-    <model-viewer bounds="tight" enable-pan src="./hardphonetshirt2.gltf" shadow-intensity="1.82" exposure="0.5" shadow-softness="1" auto-rotate camera-controls>
-
-      <div class="progress-bar" slot="progress-bar">
-          <div class="update-bar"></div>
-      </div>
-  </model-viewer>
+    <model-viewer bounds="tight" src="Project Name.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls environment-image="neutral" poster="poster.webp" shadow-intensity="0.5" auto-rotate exposure="0.65"> </model-viewer>
   </div>
+  <div style="float: left;">
+    <model-viewer bounds="tight" src="hardphonetshirt2.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls environment-image="neutral" poster="poster.webp" shadow-intensity="0.5" auto-rotate  exposure="0.95" > </model-viewer>
+  </div>
+  
   <div class="logo">
     <a href="https://www.instagram.com/hard._.copy/">
       <img src="iglogo.png" width="30px" height="30px">
