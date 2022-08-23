@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HARD COPY</title>
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
     (function () {
@@ -14,7 +14,7 @@ const second = 1000,
    day = hour * 24;
 
 
-const countDown = new Date("Aug 15, 2022 00:00:00").getTime(),
+const countDown = new Date("Jun 21, 2022 00:00:00").getTime(),
  x = setInterval(function() {    
 
    const now = new Date().getTime(),
@@ -137,8 +137,8 @@ li span {
             right: 0;
             bottom: 0;
             left: 0;
-            width: 300px;
-            height: 300px;
+            width: 400px;
+            height: 400px;
             float: left;
       justify-content: center;
 }
@@ -149,16 +149,16 @@ model-viewer {
             right: 0;
             bottom: 0;
             left: 0;
-            width: 300px;
-            height: 300px;
+            width: 400px;
+            height: 400px;
         }
-.logo {
+img.logo.slideshow-container {
   display: flex;
   justify-content: center;
   position: absolute;
-  bottom: -300px;
-  left: 0;
-  right: 0;
+  right: 100px;
+            bottom: 0;
+            left: 0;
 
 }
 @keyframes cursor {
@@ -202,6 +202,27 @@ model-viewer {
 
 
 
+.mySlides {display: none;}
+img {display: block;
+  margin-left: auto;
+  margin-right: auto;
+  float: left;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  
+  position: absolute;
+            margin: auto;
+            right: 0;
+            left: 0;
+            width: 400px;
+            height: 400px;
+      justify-content: center;
+}
+
+
 
 
 
@@ -223,16 +244,22 @@ model-viewer {
       <li><span id="seconds"></span>Seconds</li>
     </ul>
   </div>
-<div class="model">
-  <div>
-    <model-viewer bounds="tight" src="hard-tshirt2.gltf" ios-src ="e327a270-62a7-49a6-ae1c-035440b582d9-8 copy.usdz" shadow-intensity="0.5" auto-rotate exposure="0.65" camera-controls enable-pan> </model-viewer>
-  </div>
+  <div class="slideshow-container">
+
+      <img src="20220822_173853.GIF" style="width:50%">
+      <img src="20220822_234652.GIF" style="width:50%">
+      <img src="20220822_235657.GIF" style="width:50%">
+      <img src="20220822_234411.GIF" style="width:50%">
+
+
+      <div class="logo">
+        <a href="https://www.instagram.com/hard._.copy/">
+          <img src="iglogo.png" width="30px" height="30px">
+        </a>
+      </div>
+    
+    </div>
   
-  <div class="logo">
-    <a href="https://www.instagram.com/hard._.copy/">
-      <img src="iglogo.png" width="30px" height="30px">
-    </a>
-  </div>
 </div>
 
 </div>
